@@ -1,13 +1,16 @@
 import random 
 
-SuperSecretText = input("What would you like to encode and decode?");
-def random_key(length):
+def random_key(length) of equal length. 
+    # Creates a random binary key for encoding.
+    # Input: length (int)
+    # Output: result (binary string)
     result = ""
     for _ in range(length):
         result += str(random.choices([1,0],[0.5,0.5])[0])
     return result
 
 def binary_to_str(binary):
+    # Converts python binary format into a binary string.
     res = ""
     padding = 9 - len(binary)
     for _ in range(padding):
@@ -16,17 +19,22 @@ def binary_to_str(binary):
     return res
 
 def binary_text(text):
+    # Converts a full text of arbitrary length into a binary string.
     binary = ""
     for char in text:
         binary += binary_to_str(bin(ord(char)))
     return binary
+
 def ascii_text(text):
+    # Converts a binary string of arbitrary length into an ascii string.
     ascii = ""
     for i in range(len(text) // 8):
         one_char = text[i * 8:(i + 1) * 8]
         ascii += chr(int(one_char, 2))
     return ascii
+
 def xor(text, key):
+    # Performs XOR on two binary strings of equal length. 
     result = ""
 
     if len(text) != len(key):
@@ -36,15 +44,3 @@ def xor(text, key):
     for i in range(len(text)):
         result += str(int(key[i]) ^ int(text[i]))
     return result
-
-key = random_key(len(SuperSecretText) * 8)
-print(str.center("Original Text:", 30), SuperSecretText)
-print(str.center("Random Key:",30),key)
-binary = binary_text( SuperSecretText)
-print(str.center("Text converted to binary:",30),binary)
-
-EncodedSuperSecretText = xor(binary, key)
-print(str.center("Encoded binary text:", 30), EncodedSuperSecretText)
-DecodedSuperSecretText = xor(EncodedSuperSecretText, key)
-print(str.center("Decoded binary text:",30), DecodedSuperSecretText)
-print(str.center("Recovered text:", 30), ascii_text(DecodedSuperSecretText))
