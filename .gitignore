@@ -208,3 +208,9 @@ __marimo__/
 
 # Venv
 .venv
+
+# Tokens
+tokens.json
+
+# Requirements 
+requirements.txt
