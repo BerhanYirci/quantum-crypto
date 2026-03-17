@@ -14,8 +14,10 @@ To test your access to the quantum computer follow the subsequent points (note t
 # Useful References
 
 ## Classical Cryptography
+- Katz, J., & Lindell, Y. (2014). Introduction to Modern Cryptography (2nd ed.). Chapman and Hall/CRC.
 
 ## Quantum Random Number Generation
+- Gnatowski, Andrzej, et al. "True Random Number Generators on IQM Spark." arXiv preprint arXiv:2512.09862 (2025).
 
 # Contributing Guide
 
