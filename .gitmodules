@@ -1,0 +1,4 @@
+[submodule "sp800_22_tests"]
+  path = sp800_22_tests
+  url = https://github.com/EgeCaliskan/sp800_22_tests
+  branch = master
